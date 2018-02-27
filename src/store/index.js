@@ -27,9 +27,13 @@ export default new Vuex.Store({
   },
   mutations: {
     [types.SET_BASIC_FIELDS](state, field) {
-      state.basicFields.push(field)
+      state.basicFields = field
       sessionStorage.setItem('basicFields', JSON.stringify(state.basicFields))
-    }
+    },
+    // [types.DELETE_BASIC_FIELDS](state, field) {
+    //   state.basicFields.push(field)
+    //   sessionStorage.setItem('basicFields', JSON.stringify(state.basicFields))
+    // }
   },
   actions: {
     setBasicFields({ commit }, field) {
