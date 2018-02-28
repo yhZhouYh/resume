@@ -11,13 +11,13 @@
                 <v-card-text>
                     <v-container grid-list-md>
                         <v-layout wrap>
-                            <v-flex xs6 >
-                                <v-text-field label="标题" :name="fields.name" :value="fields.name" v-model="fields.name"></v-text-field>
+                            <v-flex xs6>
+                                <v-text-field label="技能名称" :name="fields.name" :value="fields.name" v-model="fields.name"></v-text-field>
                             </v-flex>
                             <v-flex xs12>
-                                <v-text-field label="内容" :name="fields.value" :value="fields.value" v-model="fields.value"></v-text-field>
+                                <v-slider  v-model="fields.value" thumb-label ></v-slider>
                             </v-flex>
-                        </v-layout>  
+                        </v-layout>
                     </v-container>
                 </v-card-text>
                 <v-card-actions>
@@ -43,9 +43,9 @@ export default {
     }
   },
   computed: {
-     dialog(){
-       return this.$store.state.dialogConfig
-     }
+    dialog() {
+      return this.$store.state.dialogConfig
+    }
   },
   data() {
     return {
@@ -68,9 +68,9 @@ export default {
     ensure() {
       this.showDialog = !this.showDialog
       if (this.fields.name) {
-        this.$store.state.basicFields.push({ ...this.fields })
-        this.$store.dispatch('setBasicFields', [
-          ...this.$store.state.basicFields
+        this.$store.state.sliders.push({ ...this.fields })
+        this.$store.dispatch('setSliders', [
+          ...this.$store.state.sliders
         ])
       }
     }

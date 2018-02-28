@@ -8,12 +8,18 @@
             <div class="re-content">
               <div class="re-avatar">
                 <v-avatar size="160">
-                  <img src="./assets/timg.jpg" alt="">
+                  <img src="./assets/avatar2.png" alt="">
                 </v-avatar>
               </div>
+              <div>基础信息</div>
               <v-flex class="left-basic-fields mt-2">
                 <fields></fields>
                 <basic-btn></basic-btn>
+              </v-flex>
+              <div>技能</div>
+              <v-flex class="left-basic-fields">
+                <sliders></sliders>
+                <slider-btn></slider-btn>
               </v-flex>
             </div>
           </v-container>
@@ -44,11 +50,15 @@
 <script>
 import Fields from './components/fields'
 import BasicBtn from './components/basicBtn'
+import Sliders from './components/sliders'
+import SliderBtn from './components/sliderBtn'
 export default {
   name: 'App',
   components: {
     Fields,
-    BasicBtn
+    BasicBtn,
+    Sliders,
+    SliderBtn
   },
   data() {
     return {
@@ -72,6 +82,8 @@ export default {
   padding-left: 15px;
   padding-right: 15px;
   position: relative;
+}
+.left-basic-fields{
   .btn {
     display: none;
   }
